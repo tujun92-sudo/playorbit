@@ -4,7 +4,7 @@ import JSZip from 'jszip';
 
 const output = path.resolve('dist');
 await mkdir(output, { recursive: true });
-for (const name of ['index.html', 'styles.css', 'theme.css', 'contrast.css', 'app.js', 'game-library.js', 'upload.html', 'upload-ui.js']) {
+for (const name of ['index.html', 'styles.css', 'theme.css', 'contrast.css', 'lobby.css', 'app.js', 'game-library.js', 'upload.html', 'upload-ui.js']) {
   await copyFile(name, path.join(output, name));
 }
 const archive = await JSZip.loadAsync(await readFile('games-bundle.zip'));
