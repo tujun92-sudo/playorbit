@@ -1,5 +1,6 @@
 [build]
-  publish = "."
+  command = "node build.mjs"
+  publish = "dist"
 
 [functions]
   directory = "netlify/functions"
@@ -8,7 +9,7 @@
   from = "/games/:slug/*"
   to = "/.netlify/functions/serve-game?slug=:slug&path=:splat"
   status = 200
-  force = true
+  force = false
 
 [[headers]]
   for = "/*"
